@@ -4,6 +4,7 @@
  *          have to complete and midterms for all my other classes as well, I wasn't able to prioritize completing
  *          this as much as I would have preferred. In the future, I'll do my best to ensure
  *          I have a failsafe for these situations. I should also note that the program does not compile currently.
+ *          Will continue to work on it until the final late deadline.
  *
  * Using a linked list for the data structure involved with storing the commands and descriptions
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
