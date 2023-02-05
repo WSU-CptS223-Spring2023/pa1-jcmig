@@ -12,7 +12,6 @@ void printMenu() {
 }
 
 void printRules() {
-    system("cls");
     cout << "R U L E S   O F   T H E   G A M E" << endl;
     cout << "This is a interactive text-based single-player matching game." << endl;
     cout << "The objective of the game is to match Linux commands to appropriate" << endl;
@@ -21,11 +20,6 @@ void printRules() {
     cout << "If you get it right, the points corresponding to that command" << endl;
     cout << "to your total score. Get it wrong and it'll be deducted from" << endl;
     cout << "your total score." << endl;
-    char input;
-    cin >> input;
-    if (input) {
-        system("cls");
-    }
 }
 
 vector<Player> parseProfiles(string& filename) {

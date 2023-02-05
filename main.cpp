@@ -1,10 +1,11 @@
 /***********
- * NOTE:    I tried to finish as much as possible, but due to my VirtualBox being wiped clean twice
- *          (once on the 26th, another time on the 30th) and losing my data and the amount of work I
- *          have to complete and midterms for all my other classes as well, I wasn't able to prioritize completing
- *          this as much as I would have preferred. In the future, I'll do my best to ensure
- *          I have a failsafe for these situations. I should also note that the program does not compile currently.
- *          Will continue to work on it until the final late deadline.
+ * NOTE (6/2): Program is now able to compile, with help from Professor Sakire. 
+ * 
+ * NOTE (4/2): I tried to finish as much as possible, but due to my VirtualBox being wiped clean twice
+ *             (once on the 26th, another time on the 30th) and losing my data and the amount of work I
+ *             have to complete and midterms for all my other classes as well, I wasn't able to prioritize completing
+ *             this as much as I would have preferred. In the future, I'll do my best to ensure
+ *             I have a failsafe for these situations. 
  *
  * Using a linked list for the data structure involved with storing the commands and descriptions
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -44,12 +45,10 @@ int main(void) {
             printRules();
             break;
         case 2:
-            system("cls");
             playerName = getPlayername();
             start(dataList, playerList, playerName, 2);
             break;
         case 3:
-            system("cls");
             playerName = getPlayername();
             start(dataList, playerList, playerName, 3);
             break;
