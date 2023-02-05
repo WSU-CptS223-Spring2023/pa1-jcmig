@@ -1,0 +1,11 @@
+Hi, I've included this textfile to highlight the issues I faced while completing PA1. 
+I was previously in contact with Duy and Professor Sakire about how my virtual machine had wiped itself completely
+clean on two ocassions (Once on the 26th and another the day before submission). On the 26th and 31st, I was unable
+to recover my lost files and had to redo the entirety of the PA from scratch. With midterms and other work I had for
+my other classes, I was unable to put as much time into the PA as I would have liked and ended up rushing through it.
+Currently, the PA does not compile, possibly due to linker issues. I'd like to apologize for the quality of work I 
+ended up producing for the first PA and assure you that this is not the quality of work you will see from me moving
+forward. Additionally, I've taken the proper measures in ensuring that I have a backup method in the event my VM
+wipes itself again.
+
+- Jeremiah Miguel
