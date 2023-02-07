@@ -1,90 +1,5 @@
 #include "linuxgame.h"
 
-template <typename NODETYPE>
-bool List<NODETYPE>::isEmpty() const {
-    return pHead == nullptr;
-}
-
-template <typename NODETYPE>
-void List<NODETYPE>::insertAtFront(const NODETYPE& data) {
-    Node<NODETYPE>* pNew = getNewNode(data, pHead);
-    if (isEmpty()) {
-        pTail = pNew;
-    }
-    pHead = pNew;
-    nodecount += 1;
-}
-
-template <typename NODETYPE>
-void List<NODETYPE>::insertAtBack(const NODETYPE& data) {
-    Node<NODETYPE>* pNew = getNewNode(data);
-    if (isEmpty()) {
-        pHead = pNew;
-    }
-    else {
-        pTail->setNextPtr(pTail);
-    }
-    pTail = pNew;
-    nodecount += 1;
-}
-
-template <typename NODETYPE>
-bool List<NODETYPE>::remove(const string cmd) {
-    Node<NODETYPE>* pPrev = nullptr;
-    Node<NODETYPE>* pCurr = pHead;
-
-    while (pCurr != nullptr && cmd.compare(pCurr->getData().getCmd()) != 0) {
-        pPrev = pCurr;
-        pCurr = pCurr->getNextPtr();
-    }
-
-    // If cmd can't be found
-    if (pCurr == nullptr) {
-        return false;
-    }
-
-    // Removing the node
-    if (pPrev == nullptr) {
-        pHead = pHead->getNextPtr();
-    }
-    else {
-        pPrev->setNextPtr(pCurr->getNextPtr());
-    }
-
-    // If necessary; Update pTail
-    if (pCurr == pTail) {
-        pTail = pPrev;
-    }
-
-    delete pCurr;
-    return true;
-}
-
-template <typename NODETYPE>
-void List<NODETYPE>::printList() const {
-    Node<NODETYPE>* pCurr = pHead;
-    int i = 1;
-
-    while (pCurr != nullptr) {
-        cout << i << "\t" << pCurr->getData().getCmd() << "\t\"" << pCurr->getData().getDesc() << "\"" << endl;
-        pCurr = pCurr->getNextPtr;
-    }
-
-    cout << endl;
-}
-
-template <typename NODETYPE>
-const NODETYPE* List<NODETYPE>::search(const string& cmd) {
-    Node<NODETYPE>* pCurr = pHead;
-    while (pCurr != nullptr) {
-        if (pCurr->getData().getCmd() == cmd) {
-            return &pCurr->data;
-        }
-        pCurr = pCurr->getNextPtr();
-    }
-    return false;
-}
-
 void printMenu() {
     cout << "Please select an option listed below:" << endl;
     cout << "1. Game Rules" << endl;
@@ -133,7 +48,7 @@ vector<Player> parseProfiles(string& filename) {
 }
 
 
-void parseData(const string& filename, List<Node<Data>>& dataList) {
+void parseData(const string& filename, List<Data>& dataList) {
     ifstream file(filename);
     string line;
 
@@ -161,7 +76,7 @@ string getPlayername() {
 }
 
 // start() will be used for new game and load game, difference being 
-void start(List<Node<Data>> dataList, vector<Player> playerList, string playerName, int option) {
+void start(List<Data> dataList, vector<Player> playerList, string playerName, int option) {
     int numQuestions;
     int totalPoints = 0;
 
@@ -266,7 +181,7 @@ int checkPlayerExists(string playerName, vector<Player> playerList) {
     }
 }
 
-void removeCmd(List<Node<Data>> dataList) {
+void removeCmd(List<Data> dataList) {
     string cmdRemove;
     int exists;
 
@@ -275,7 +190,7 @@ void removeCmd(List<Node<Data>> dataList) {
     dataList.remove(cmdRemove);
 }
 
-void addCmd(List<Node<Data>> dataList) {
+void addCmd(List<Data> dataList) {
     string cmdAdd, descAdd;
     int pointsAdd;
 
@@ -291,4 +206,12 @@ void addCmd(List<Node<Data>> dataList) {
 
 
 }
+
+void displayAll (){
+
+}
+
+
+void saveAndExit(List<Data> dataList, vector<Player> playerList, string dataFilename, string stringFilename){}
+
 

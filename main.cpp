@@ -25,7 +25,7 @@ int main(void) {
     int input;
     string fProfiles = "profiles.csv", fData = "commands.csv", playerName;
     vector<Player> playerList = parseProfiles(fProfiles);
-    List<Node<Data>> dataList;
+    List<Data> dataList;
     parseData(fData, dataList);
 
     do {
